@@ -9,13 +9,13 @@ describe('Posting a new blog post', () => {
     var body
     it('Add new blog post', (done) => {
         chai.request(baseURL)
-            .post('/posts') // endpoint with we will test
+            .post('/posts')
             .send({
                 'title': 'Lorem Ipsum',
                 'body': 'Contrary to popular belief, Lorem Ipsum is not simply random text.',
                 'userId': 3
             })
-            .end((err, res) => { // tests to make
+            .end((err, res) => {
                 //TODO make it work so response can be 201 or 202
                 res.should.to.have.status(201);
                 res.should.be.json;

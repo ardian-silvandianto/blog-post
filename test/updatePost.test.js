@@ -9,12 +9,12 @@ describe('Updating an existing post', () => {
     it('Update a post', (done) => {
         let id = 99
         chai.request(baseURL)
-            .patch('/posts/' + id) // endpoint with we will test
+            .patch('/posts/' + id)
             .send({
                 'title': 'New kid in the block',
                 'body': 'The first five recognized dwarf planets are Ceres, Pluto, Eris, Makemake and Haumea.',
             })
-            .end((err, res) => { // tests to make
+            .end((err, res) => {
                 res.should.to.have.status(200);
                 res.should.be.json;
                 res.body.should.be.a('object');
